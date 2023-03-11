@@ -8,18 +8,18 @@ Made with a boilerplate Gatsby app, check `packages.json` for script helpers.
 ### Product intention
 through the design process, maybe we can make a useful tool for stress-testing designs against commonly overlooked use-cases through a series of scenarios.
 
-##### Basic product:
+#### Basic product:
 - could be used as a solo design tool (like https://gfda.co/)
 - could be handy in a crit
 - over time, designers using the tool will remember some issues and deal with them by default
 
-##### With a contribution model, practitioners could:
+#### With a contribution model, practitioners could:
 - contribute to the dataset
 - challenge less worthwhile scenarios
 - vote on the scenarios they value
 - contribute higher-level sets of scenarios
 
-##### What it won't be:
+#### What it won't be:
 - an exhaustive list of human needs
 
 ---

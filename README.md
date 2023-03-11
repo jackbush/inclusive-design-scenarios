@@ -1,7 +1,5 @@
 # Inclusive design scenarios tool
 
----
-
 ### Contributing
 Made with a boilerplate Gatsby app, check `packages.json` for script helpers.
 

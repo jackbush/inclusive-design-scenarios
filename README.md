@@ -1,49 +1,34 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+# Contributing
 
-## 🚀 Quick start
+Made with a boilerplate Gatsby app, check `packages.json` for script helpers.
 
-1.  **Create a Gatsby site.**
+# Inclusive design scenarios tool
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+personas are mostly trash
+- demographically homogenous 
+- vulnerable to bias
+- entrench stereotypes
+- filled with irrelevant details
+- used as a substitute for proper ongoing research
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+activity-focussed design is better for making tools to help people achieve their desired outcomes, but in MVP-driven product teams accessibility and inclusion can be seen as an irritating after-thought. it works fine for me, can't we just ship it?
 
-2.  **Start developing.**
+product management used to be a function of marketing. it's easy to rationalise that we design products for the most valuable target users. this approach has led to significant harm at scale, e.g. twitter taking over a year to give any mechanism for reporting or blocking abusive content, a problem none of the makers had ever experienced personally.
 
-    Navigate into your new site’s directory and start it up.
+great design, like the oxo good grips potato peeler, is often a result of designing for edge-cases and trusting the middle will sort itself out. (in that case, putting a normal potato peeler in a mountain bike grip so a partner with arthritis could use it more comfortably)
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+through the design process, maybe we can make a useful tool for stress-testing designs against commonly overlooked use-cases through a series of scenarios.
 
-3.  **Open the code and start customizing!**
+Basic product:
+- could be used as a solo design tool (like https://gfda.co/)
+- could be handy in a crit
+- over time, designers using the tool will remember some issues and deal with them by default
 
-    Your site is now running at http://localhost:8000!
+With a contribution model, practitioners could:
+- contribute to the dataset
+- challenge less worthwhile scenarios
+- vote on the scenarios they value
+- contribute higher-level sets of scenarios
 
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+What it won't be:
+- an exhaustive list of human needs

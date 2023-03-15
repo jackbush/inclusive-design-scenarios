@@ -4,9 +4,10 @@
 module.exports = {
   siteMetadata: {
     title: `inclusive-design-scenarios`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://jackbush.github.io/inclusive-design-scenarios/`
   },
-  plugins: ["gatsby-plugin-sass", "gatsby-plugin-google-gtag", "gatsby-plugin-image", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  pathPrefix: "/inclusive-design-scenarios",
+  plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",

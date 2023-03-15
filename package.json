@@ -12,12 +12,12 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.7.0",
-    "gatsby-plugin-google-gtag": "^5.7.0",
     "gatsby-plugin-image": "^3.7.0",
     "gatsby-plugin-mdx": "^5.7.0",
     "gatsby-plugin-sass": "^6.7.0",
@@ -27,5 +27,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.59.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

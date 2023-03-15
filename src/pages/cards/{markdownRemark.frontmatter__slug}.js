@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from '../../components/layout'
 
 export default function CardTemplate({
@@ -8,6 +8,7 @@ export default function CardTemplate({
   const { frontmatter, html } = data.markdownRemark
   return (
     <Layout>
+      <Link to="/">Back</Link>
       <h1>{frontmatter.title}</h1>
       <div
         dangerouslySetInnerHTML={{ __html: html }}

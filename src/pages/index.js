@@ -1,17 +1,16 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from '../components/layout'
 
 export default function HomePage({ data }) {
   const cards = data.allSitePage.nodes
-
   return (
     <Layout>
       <h1>All Cards</h1>
       <ul>
         {cards.map((item) => (
-          <li key={item.path}>
-            <a href={item.path}>{item.path}</a>
+          <li key={item.pageContext.id}>
+            <Link to={item.path}>{item.path}</Link>
           </li>
         ))}
       </ul>
@@ -25,6 +24,7 @@ export const pageQuery = graphql`
       nodes {
         id
         path
+        pageContext
       }
     }
   }

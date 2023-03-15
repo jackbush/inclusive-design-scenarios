@@ -36,5 +36,12 @@ module.exports = {
       __key: "cards"
     },
     "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`inter\:400,600`],
+        display: "swap",
+      },
+    },
   ]
 };

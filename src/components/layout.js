@@ -1,6 +1,10 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
+const fontsWrapper = {
+  fontFamily: "Inter"
+}
+
 const navStyles = {
   position: 'fixed',
   top: 0,
@@ -24,12 +28,12 @@ const containerStyles = {
   width: '90vw',
   maxWidth: 720,
   margin: "auto",
-  marginTop: 100
+  marginTop: 100,
 }
 
 export default function Layout({ children }) {
   return (
-    <>
+    <div style={fontsWrapper}>
       <nav style={navStyles}>
         <ul style={navItemsStyles}>
           <li>
@@ -42,7 +46,7 @@ export default function Layout({ children }) {
         </ul>
       </nav>
       <main style={containerStyles}>{children}</main>
-    </>
+    </div>
   );
 }
 

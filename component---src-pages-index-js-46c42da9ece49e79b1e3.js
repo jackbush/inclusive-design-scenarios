@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkinclusive_design_scenarios=self.webpackChunkinclusive_design_scenarios||[]).push([[678],{6558:function(e,n,l){l.r(n),l.d(n,{default:function(){return a}});var t=l(7294);function a(e){let{data:n}=e;return console.log(n),t.createElement("div",null,t.createElement("h1",null,"All cards"),t.createElement("ul",null,n.allSitePage.nodes.map((e=>t.createElement("li",{key:e.path},t.createElement("a",{href:e.path},e.path))))))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-46c42da9ece49e79b1e3.js.map

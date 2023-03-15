@@ -1,15 +1,14 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-export default function CardsList({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  console.log(data)
+export default function CardsList({ data }) {
+  const pages = data.allSitePage.nodes
+
   return (
     <div>
-      <h1>All cards</h1>
+      <h1>All pages</h1>
       <ul>
-        {data.allSitePage.nodes.map((item) => (
+        {pages.map((item) => (
           <li key={item.path}>
             <a href={item.path}>{item.path}</a>
           </li>
@@ -21,13 +20,10 @@ export default function CardsList({
 
 export const pageQuery = graphql`
   query MyQuery {
-    allSitePage {
+    allSitePage(sort: {path: ASC}) {
       nodes {
         id
         path
-        children {
-          id
-        }
       }
     }
   }

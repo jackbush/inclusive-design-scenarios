@@ -1,18 +1,18 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import Layout from '../../components/layout'
 
 export default function CardTemplate({
-  data, // this prop will be injected by the GraphQL query below.
+  data,
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html } = data.markdownRemark
   return (
-    <div>
+    <Layout>
       <h1>{frontmatter.title}</h1>
       <div
         dangerouslySetInnerHTML={{ __html: html }}
       />
-    </div>
+    </Layout>
   )
 }
 

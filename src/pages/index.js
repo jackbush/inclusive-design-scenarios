@@ -1,11 +1,12 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import Layout from '../components/layout'
 
 export default function HomePage({ data }) {
   const cards = data.allSitePage.nodes
 
   return (
-    <div>
+    <Layout>
       <h1>All Cards</h1>
       <ul>
         {cards.map((item) => (
@@ -14,7 +15,7 @@ export default function HomePage({ data }) {
           </li>
         ))}
       </ul>
-    </div>
+    </Layout>
   )
 }
 

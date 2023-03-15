@@ -1,14 +1,14 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-export default function CardsList({ data }) {
-  const pages = data.allSitePage.nodes
+export default function HomePage({ data }) {
+  const cards = data.allSitePage.nodes
 
   return (
     <div>
-      <h1>All pages</h1>
+      <h1>All Cards</h1>
       <ul>
-        {pages.map((item) => (
+        {cards.map((item) => (
           <li key={item.path}>
             <a href={item.path}>{item.path}</a>
           </li>
@@ -19,8 +19,8 @@ export default function CardsList({ data }) {
 }
 
 export const pageQuery = graphql`
-  query MyQuery {
-    allSitePage(sort: {path: ASC}) {
+  query AllCardPages {
+    allSitePage(filter: {path: {regex: "/cards/"}}) {
       nodes {
         id
         path

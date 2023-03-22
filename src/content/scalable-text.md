@@ -2,7 +2,6 @@
 slug: "/scalable-text"
 title: "Scalable text"
 ---
-# dufhwoi 
-- test
-- markdown
-- please
+## Placeholder subheading
+- Bullet list 1
+- Bullet list 2

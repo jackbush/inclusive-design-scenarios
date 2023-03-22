@@ -38,3 +38,12 @@ activity-focussed design is better for making tools to help people achieve their
 product management used to be a function of marketing. it's easy to rationalise that we design products for the most valuable target users. this approach has led to significant harm at scale, e.g. twitter taking over a year to give any mechanism for reporting or blocking abusive content, a problem none of the makers had ever experienced personally.
 
 great design, like the oxo good grips potato peeler, is often a result of designing for edge-cases and trusting the middle will sort itself out. (in that case, putting a normal potato peeler in a mountain bike grip so a partner with arthritis could use it more comfortably)
+
+---
+
+### Reading
+- https://www.extentia.com/post/designing-for-inclusivity-and-diversity
+- https://link.springer.com/chapter/10.1007/978-3-030-49282-3_4
+- https://insights.simpsonscarborough.com/the-trouble-with-personas
+- https://www.linkedin.com/pulse/how-can-we-mobilise-underrepresented-groups-ensure-theyre-shubib/
+- https://xd.adobe.com/ideas/principles/design-systems/what-is-inclusive-design-principles-and-examples/

@@ -1,25 +1,25 @@
-import * as React from "react"
+import React, {useState, useEffect} from "react"
 import Layout from '../components/layout'
 import {cards} from '../content'
 
-let cardIdx
-const setRandomCardIndex = () => {
-  cardIdx = Math.floor(Math.random() * cards.length)
-  console.log(cardIdx)
-}
-
-// if url contains a permalink index, set it here
-// SHONK
-// else grab a random one
-setRandomCardIndex()
 
 export default function HomePage() {
+  const [scenario, setScenario] = useState(false);
+  
+  const setRandomScenario = () => {
+    setScenario(cards[Math.floor(Math.random() * cards.length)])
+  }
+
+  // grab a random one on load
+  useEffect(() => {
+    setRandomScenario();
+  }, []);
+
   return (
     <Layout>
       <h1>Inclusive design scenarios</h1>
-      <p>{cards[cardIdx]}</p>
-      <button onClick={setRandomCardIndex}>I need more</button>
-      <button>Share</button>
+      <p>{scenario}</p>
+      <button onClick={setRandomScenario}>I need more</button>
     </Layout>
   )
 }

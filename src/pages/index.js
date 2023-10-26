@@ -5,38 +5,33 @@ import { useQueryParamString } from "react-use-query-param-string";
 
 export default function HomePage() {
   const getRandomScenarioIdx = () => {
-    return Math.floor(Math.random() * scenarios.length)
-  }
+    return Math.floor(Math.random() * scenarios.length);
+  };
 
   const [scenario, setScenario] = useState(false);
+
+  // initialise scenarioIdxParam as a random value if not present
   const [scenarioIdxParam, setScenarioIdxParam, initialized] =
     useQueryParamString("scenario", getRandomScenarioIdx(), false);
 
-  // SHONK this shouldn't be needed
-  let i = scenarioIdxParam;
-
-  const loadScenario = (ev) => {
-    if (ev) {
-      // lazy check if it's been triggered by button
-      i = getRandomScenarioIdx()
-    } else {
-      // has been triggered by useEffect
-      i = scenarioIdxParam;
-    }
-    setScenarioIdxParam(i);
-    setScenario(scenarios[i]);
+  const randomizeScenario = (ev) => {
+    setScenarioIdxParam(getRandomScenarioIdx());
+    setScenario(scenarios[scenarioIdxParam]);
   };
 
-  // load a scenario
   useEffect(() => {
-    if(initialized) loadScenario();
+    if (initialized) {
+      // looks wrong but puts the param in bar
+      setScenarioIdxParam(scenarioIdxParam);
+      setScenario(scenarios[scenarioIdxParam]);
+    }
   });
 
   return (
     <Layout>
       <h1>Inclusive design scenarios</h1>
       <p>{scenario}</p>
-      <button onClick={loadScenario}>I need more</button>
+      <button onClick={randomizeScenario}>I need more</button>
     </Layout>
   );
 }

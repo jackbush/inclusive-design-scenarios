@@ -13,13 +13,13 @@ const setRandomCardIndex = () => {
 // else grab a random one
 setRandomCardIndex()
 
-
 export default function HomePage() {
   return (
     <Layout>
       <h1>Inclusive design scenarios</h1>
       <p>{cards[cardIdx]}</p>
-      {/*<button onClick={setRandomCardIndex}>I need more</button>*/}
+      <button onClick={setRandomCardIndex}>I need more</button>
+      <button>Share</button>
     </Layout>
   )
 }

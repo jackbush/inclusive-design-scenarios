@@ -30,7 +30,7 @@ export default function HomePage() {
   // load a scenario
   useEffect(() => {
     if(initialized) loadScenario();
-  }, [initialized]);
+  });
 
   return (
     <Layout>

@@ -1,33 +1,25 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
 import Layout from '../components/layout'
+import {cards} from '../content'
 
-export default function HomePage({ data }) {
-  const cards = data.allSitePage.nodes
+let cardIdx
+const setRandomCardIndex = () => {
+  cardIdx = Math.floor(Math.random() * cards.length)
+  console.log(cardIdx)
+}
+
+// if url contains a permalink index, set it here
+// SHONK
+// else grab a random one
+setRandomCardIndex()
+
+
+export default function HomePage() {
   return (
     <Layout>
-      <h1>All Cards</h1>
-      <ul>
-        {cards.map((item) => (
-          <li key={item.pageContext.id}>
-            <Link to={item.path}>{item.path}</Link>
-          </li>
-        ))}
-      </ul>
+      <h1>Inclusive design scenarios</h1>
+      <p>{cards[cardIdx]}</p>
+      {/*<button onClick={setRandomCardIndex}>I need more</button>*/}
     </Layout>
   )
 }
-
-export const pageQuery = graphql`
-  query AllCardPages {
-    allSitePage(filter: {path: {regex: "/cards/"}}) {
-      nodes {
-        id
-        path
-        pageContext
-      }
-    }
-  }
-`
-
-

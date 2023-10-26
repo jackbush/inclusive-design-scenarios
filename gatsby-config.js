@@ -10,9 +10,9 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    // "gatsby-plugin-mdx",
+    // "gatsby-plugin-sharp",
+    // "gatsby-transformer-sharp",
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -27,15 +27,7 @@ module.exports = {
         "path": "./src/pages/"
       },
       __key: "pages"
-    }, {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/src/content`,
-      },
-      __key: "cards"
     },
-    "gatsby-transformer-remark",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

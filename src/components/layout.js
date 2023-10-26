@@ -36,13 +36,12 @@ export default function Layout({ children }) {
     <div style={fontsWrapper}>
       <nav style={navStyles}>
         <ul style={navItemsStyles}>
-          <li>
+          <li style={navItemStyles}>
             <Link
               to="/"
-              style={navItemStyles}
             >Home</Link>
           </li>
-          {/*<li><Link to="#">Random card</Link></li>*/}
+          <li style={navItemStyles}><Link to="/about">About</Link></li>
         </ul>
       </nav>
       <main style={containerStyles}>{children}</main>

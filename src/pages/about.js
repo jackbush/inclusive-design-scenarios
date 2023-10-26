@@ -1,11 +1,12 @@
 import * as React from "react";
+import Helmet from "react-helmet";
+
 import Layout from "../components/layout";
 
 export default function AboutPage() {
   return (
-    <Layout>
-      <h1>About</h1>
-      <h2>"</h2>
+    <Layout title="About">
+      <Helmet title="About" />
       <blockquote>
         <p>
           This alphabet soup of accessibility is not a collection of personas.

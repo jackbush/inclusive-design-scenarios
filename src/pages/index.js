@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Helmet from "react-helmet";
+
 import Layout from "../components/layout";
 import { scenarios } from "../content";
 import { useQueryParamString } from "react-use-query-param-string";
@@ -28,12 +30,12 @@ export default function HomePage() {
   }, [initialized, setScenarioIdxParam, scenarioIdxParam]);
 
   return (
-    <Layout>
-      <h1>Inclusive design scenarios</h1>
-      <main>
-        <p>{scenario}</p>
-      </main>
-      <button onClick={randomizeScenario}>I need more</button>
+    <Layout title="Inclusive scenarios" lead="A tool for stress-testing inclusivity of designs against commonly overlooked scenarios">
+      <Helmet title="Home" />
+      <p class="scenario">{scenario}</p>
+      <div class="cta__wrapper">
+        <button class="cta" onClick={randomizeScenario}>I need more</button>
+      </div>
     </Layout>
   );
 }

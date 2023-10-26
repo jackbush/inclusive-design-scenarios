@@ -1,50 +1,36 @@
 import * as React from "react";
+import Helmet from "react-helmet";
 import { Link } from "gatsby";
 
-const fontsWrapper = {
-  fontFamily: "Inter",
-};
+import "../styles/main.scss";
 
-const navStyles = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100vw",
-};
-
-const navItemsStyles = {
-  listStyle: "none",
-  margin: 0,
-  padding: 0,
-  textAlign: "right",
-};
-
-const navItemStyles = {
-  display: "inline-block",
-  padding: 12,
-};
-
-const containerStyles = {
-  width: "90vw",
-  maxWidth: 720,
-  margin: "auto",
-  marginTop: 100,
-};
-
-export default function Layout({ children }) {
+export default function Layout({ title, lead, children }) {
   return (
-    <div style={fontsWrapper}>
-      <nav style={navStyles}>
-        <ul style={navItemsStyles}>
-          <li style={navItemStyles}>
+    <div class="fonts-wrapper">
+      <Helmet
+        titleTemplate={`%s • Inclusive Design Scenarios`}
+        defaultTitle="Inclusive Design Scenarios"
+        // link={[{ rel: "icon", type: "image/png", href: "favicon.ico" }]}
+      />
+      <nav class="nav">
+        <ul class="nav__items">
+          <li>
             <Link to="/">Home</Link>
           </li>
-          <li style={navItemStyles}>
+          <li>
             <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
-      <main style={containerStyles}>{children}</main>
+      <div class="container">
+        <header class="header">
+          <h1 class="header__title">{title}</h1>
+          <p class="header__lead">{lead}</p>
+        </header>
+        <main>
+          {children}
+        </main>
+      </div>
     </div>
   );
 }

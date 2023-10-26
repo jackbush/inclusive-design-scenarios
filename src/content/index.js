@@ -1,4 +1,4 @@
-export const cards = [
+export const scenarios = [
 	"A is blind, and has been since birth. He’s always used a screen reader, and always used a computer. He’s a programmer, and he’s better prepared to use the web than most of the others on this list.",
 	"B fell down a hill while running to close his car windows in the rain, and fractured multiple fingers. He’s trying to surf the web with his left hand and the keyboard.",
 	"C has a blood cancer. She’s been on chemo for a few months and, despite being an MD, is finding it harder and harder to remember things, read, or have a conversation. It’s called chemo brain. She’s frustrated because she’s becoming more and more reliant on her smart phone for taking notes and keeping track of things at the same time that it’s getting harder and harder for her to use.",

@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react"
 import Layout from '../components/layout'
-import {cards} from '../content'
+import {scenarios} from '../content'
 
 
 export default function HomePage() {
   const [scenario, setScenario] = useState(false);
   
   const setRandomScenario = () => {
-    setScenario(cards[Math.floor(Math.random() * cards.length)])
+    setScenario(scenarios[Math.floor(Math.random() * scenarios.length)])
   }
 
   // grab a random one on load

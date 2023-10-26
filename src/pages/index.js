@@ -25,12 +25,14 @@ export default function HomePage() {
       setScenarioIdxParam(scenarioIdxParam);
       setScenario(scenarios[scenarioIdxParam]);
     }
-  });
+  }, [initialized, setScenarioIdxParam, scenarioIdxParam]);
 
   return (
     <Layout>
       <h1>Inclusive design scenarios</h1>
-      <p>{scenario}</p>
+      <main>
+        <p>{scenario}</p>
+      </main>
       <button onClick={randomizeScenario}>I need more</button>
     </Layout>
   );

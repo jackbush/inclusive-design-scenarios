@@ -36,8 +36,10 @@ a {
   color: $message-link;
 
   transition: $transition;
-  &:hover {
-    color: $message-link-hover;
+  @media (hover: hover) {
+    &:hover {
+      color: $message-link-hover;
+    }
   }
 }
 .nav__items {
@@ -112,7 +114,9 @@ a {
   cursor: pointer;
 
   transition: $transition;
-  &:hover {
-    background: $cta-surface-hover;
+  @media (hover: hover) {
+    &:hover {
+      background: $cta-surface-hover;
+    }
   }
 }

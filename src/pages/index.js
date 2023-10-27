@@ -38,7 +38,7 @@ export default function HomePage() {
       <p className="scenario">{scenario}</p>
       <div className="cta__wrapper">
         <button className="cta" onClick={randomizeScenario}>
-          I need more
+          Give me another one
         </button>
       </div>
     </Layout>

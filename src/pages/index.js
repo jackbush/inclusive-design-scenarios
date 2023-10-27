@@ -35,7 +35,10 @@ export default function HomePage() {
       lead="A tool for stress-testing inclusivity of designs against commonly overlooked scenarios."
     >
       <Helmet title="Home" />
-      <p className="scenario">{scenario}</p>
+      <div className="scenario">
+        {/*<p className="scenario__label">Number {scenarioIdxParam}</p>*/}
+        <p className="scenario__content">{scenario}</p>
+      </div>
       <div className="cta__wrapper">
         <button className="cta" onClick={randomizeScenario}>
           Give me another one

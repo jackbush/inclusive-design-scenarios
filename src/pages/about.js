@@ -5,44 +5,60 @@ import Layout from "../components/layout";
 
 export default function AboutPage() {
   return (
-    <Layout title="About">
+    <Layout
+      title="About"
+      lead="Why this tool exists, what to do with it, how to contribute, and acknowledgements."
+    >
       <Helmet title="About" />
-      <blockquote>
-        <p>
-          This alphabet soup of accessibility is not a collection of personas.
-          These are friends and family I love. Sometimes I’m describing a group.
-          (One can only describe chemo brain so many times.) Some people are
-          more than one letter. (Yay genetic lottery.) Some represent stages
-          people were in 10 years ago and some stages we know they will hit — we
-          just don’t know when.
-        </p>
-        <p>
-          Robin Christopherson (@usa2day) points out that many of us are only
-          temporarily able-bodied. I’ve seen this to be true. At any given
-          moment, we could be juggling multiple tasks that take an eye or an ear
-          or a finger away. We could be exhausted or sick or stressed. Our need
-          for an accessible web might last a minute, an hour, a day, or the rest
-          of our lives. We never know.
-        </p>
-        <p>We never know who. We never know when.</p>
-        <p>
-          We just know that when it’s our turn to be one of the twenty-six, we
-          will want the web to work. So today, we need to make simple, readable,
-          effective content. Today, we make sure all our auditory content has a
-          transcript, or makes sense without one. Today, we need to make our
-          shopping carts and logins and checkouts friendly to everyone. Today,
-          we need to design with one thought to the color blind, one thought to
-          the photosensitive epileptic, and one thought to those who will
-          magnify our screens. Today we need to write semantic HTML and make
-          pages that can be navigated by voice, touch, mouse, keyboard, and
-          stylus.
-        </p>
-        <p>Tomorrow, it’s a new alphabet.</p>
-        <footer>
-          —Anne Gibson, <cite>An Alphabet of Accessibility Issues</cite> (31 Jul
-          2014)
-        </footer>
-      </blockquote>
+      {/*<h2 className="sub-heading">Why use it</h2>*/}
+      <p>
+        We're never more then temporarily able-bodied. At any given moment we
+        could be juggling tasks that take an eye, ear or finger away. We could
+        be exhausted, sick or stressed. Our need for an accessible web might
+        last a minute, a day, a month or the rest of our lives.
+        When it’s our turn we'll want the web to work, so let's do better.
+      </p>
+      <h2 className="sub-heading">What to do with it</h2>
+      <p>
+        It's not an exhaustive list of human needs, or a collection of personas.
+        Have a click through to read, come back when you're stuck or think
+        you're finished and want to test your product through the experience of
+        others. Maybe try using it in your next design crit. Each scenario has a
+        unique URL, so share if you think it would help someone.
+      </p>
+      
+      <h2 className="sub-heading">How to contribute</h2>
+      <p>
+        We're open to contributions! Head to our{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/theuxtoolbox/inclusive-design-scenarios"
+        >
+          Github
+        </a>{" "}
+        to get involved.
+      </p>
+      <ul>
+        <li>Contribute a scenario</li>
+        <li>Give feedback</li>
+        <li>Report/fix a bug</li>
+        <li>Improve the look</li>
+        <li>Share an idea</li>
+      </ul>
+      <h2 className="sub-heading">Acknowledgements</h2>
+      <ul>
+        <li>
+          Initial scenarios adapted from{" "}
+          <cite>An Alphabet of Accessibility Issues</cite> by Anne Gibson
+        </li>
+        <li>
+          Format inspired by{" "}
+          <a href="https://gfda.co/" target="_blank" rel="noreferrer">
+            GFDA
+          </a>
+        </li>
+      </ul>
     </Layout>
   );
 }

@@ -20,15 +20,6 @@ export default function Layout({ title, lead, children }) {
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://github.com/theuxtoolbox/inclusive-design-scenarios"
-            >
-              Contribute
-            </a>
-          </li>
         </ul>
       </nav>
       <div className="container">

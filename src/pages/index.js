@@ -30,11 +30,16 @@ export default function HomePage() {
   }, [initialized, setScenarioIdxParam, scenarioIdxParam]);
 
   return (
-    <Layout title="Inclusive scenarios" lead="A tool for stress-testing inclusivity of designs against commonly overlooked scenarios">
+    <Layout
+      title="Inclusive scenarios"
+      lead="A tool for stress-testing inclusivity of designs against commonly overlooked scenarios."
+    >
       <Helmet title="Home" />
-      <p class="scenario">{scenario}</p>
-      <div class="cta__wrapper">
-        <button class="cta" onClick={randomizeScenario}>I need more</button>
+      <p className="scenario">{scenario}</p>
+      <div className="cta__wrapper">
+        <button className="cta" onClick={randomizeScenario}>
+          I need more
+        </button>
       </div>
     </Layout>
   );

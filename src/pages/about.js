@@ -15,8 +15,8 @@ export default function AboutPage() {
         We're never more then temporarily able-bodied. At any given moment we
         could be juggling tasks that take an eye, ear or finger away. We could
         be exhausted, sick or stressed. Our need for an accessible web might
-        last a minute, a day, a month or the rest of our lives.
-        When it’s our turn we'll want the web to work, so let's do better.
+        last a minute, a day, a month or the rest of our lives. When it’s our
+        turn we'll want the web to work, so let's do better.
       </p>
       <h2 className="sub-heading">What to do with it</h2>
       <p>
@@ -26,7 +26,7 @@ export default function AboutPage() {
         others. Maybe try using it in your next design crit. Each scenario has a
         unique URL, so share if you think it would help someone.
       </p>
-      
+
       <h2 className="sub-heading">How to contribute</h2>
       <p>
         We're open to contributions! Head to our{" "}
@@ -50,7 +50,13 @@ export default function AboutPage() {
       <ul>
         <li>
           Initial scenarios adapted from{" "}
-          <cite>An Alphabet of Accessibility Issues</cite> by Anne Gibson
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://web.archive.org/web/20160319032044/https://the-pastry-box-project.net/anne-gibson/2014-july-31"
+          >
+            <cite>An Alphabet of Accessibility Issues</cite> by Anne Gibson
+          </a>
         </li>
         <li>
           Format inspired by{" "}

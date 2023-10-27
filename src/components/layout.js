@@ -11,7 +11,13 @@ export default function Layout({ title, lead, children }) {
         titleTemplate={`%s • Inclusive Design Scenarios`}
         defaultTitle="Inclusive Design Scenarios"
         // link={[{ rel: "icon", type: "image/png", href: "favicon.ico" }]}
-      />
+      >
+        <html lang="en" />
+        <meta
+          name="description"
+          content="A tool for stress-testing inclusivity of designs against commonly overlooked scenarios."
+        />
+      </Helmet>
       <nav className="nav">
         <ul className="nav__items">
           <li>

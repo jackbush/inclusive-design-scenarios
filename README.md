@@ -23,13 +23,3 @@ It's a simple [Gatsby Quick Start app](https://www.gatsbyjs.com/docs/quick-start
 ## Accessibility standards
 
 It's intended to reach the WCAG 2.2 AAA standard. If you spot anything falling short, please report and/or submit a fix.
-
-## Known shonk
-
-The big one is scenarios. They're an array of strings, permalinked by index position as a URL parameter. This means:
-
-1. [Deleting a scenario would break every subsequently indexed permalink](https://github.com/theuxtoolbox/inclusive-design-scenarios/issues/23)
-1. [Scenarios can only be plain text with no formatting](https://github.com/theuxtoolbox/inclusive-design-scenarios/issues/24)
-1. [There's no content model, and it's no reflected in any tests](https://github.com/theuxtoolbox/inclusive-design-scenarios/issues/25)
-
-If you feel like addressing any of these, please go for it.

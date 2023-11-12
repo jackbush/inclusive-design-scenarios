@@ -18,11 +18,7 @@ Anybody is welcome to [submit a pull request (PR)](https://github.com/theuxtoolb
 
 It's a simple [Gatsby Quick Start app](https://www.gatsbyjs.com/docs/quick-start/), uses the [Gatsby CLI tools](https://www.gatsbyjs.com/docs/reference/gatsby-cli).
 
-`npm run develop` or `npm start`
-Proxy for `gatsby develop`, builds and serves with some fancy stuff on http://localhost:8000/
-
-`npm run clean`
-Sometimes it gets all gunked up and this (generally) makes it nice again.
+`npm start` is a proxy for `npm run develop`, builds and serves with some fancy stuff.
 
 ## Accessibility standards
 

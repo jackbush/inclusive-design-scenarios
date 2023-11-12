@@ -1,54 +1,39 @@
-# Inclusive design scenarios tool
+# Inclusive design scenarios
 
-### Contributing
-We're open to contributions! Open an issue or PR to
-- Contribute a scenario
-- Give feedback
-- Report/fix a bug
-- Improve the look
-- Share an idea
+[More information about this tool.](https://www.theuxtoolbox.com/inclusive-design-scenarios/about/)
 
----
+## Contributing
 
-### Product intention
-through the design process, maybe we can make a useful tool for stress-testing designs against commonly overlooked use-cases through a series of scenarios.
+We want this to be as easy as possible, with everybody welcome to get involved. This is the sort of project which will especially benefit from a breadth of lived experience.
 
-#### Basic product:
-- could be used as a solo design tool (like https://gfda.co/)
-- could be handy in a crit
-- over time, designers using the tool will remember some issues and deal with them by default
+### Non-technical contributions
 
-#### With a contribution model, practitioners could:
-- contribute to the dataset
-- challenge less worthwhile scenarios
-- vote on the scenarios they value
-- contribute higher-level sets of scenarios
+Trying to make creative use of the [Issues Tracker](https://github.com/theuxtoolbox/inclusive-design-scenarios/issues) so people can contribute content improvements, ideas, feedback and bug reports, and get involved in discussion, without writing code or running anything locally. If you have a (free) GitHub account, you can create and post here.
 
-#### What it won't be:
-- an exhaustive list of human needs
+### Technical contributions
 
----
+Anybody is welcome to [submit a pull request (PR)](https://github.com/theuxtoolbox/inclusive-design-scenarios/pulls). Just ask that any PR references an issue and includes a clear description of what it is.
 
-### Design Notes
+## Running locally
 
-personas are mostly trash
-- demographically homogenous 
-- vulnerable to bias
-- entrench stereotypes
-- filled with irrelevant details
-- used as a substitute for proper ongoing research
+It's a simple [Gatsby Quick Start app](https://www.gatsbyjs.com/docs/quick-start/), uses the [Gatsby CLI tools](https://www.gatsbyjs.com/docs/reference/gatsby-cli)
 
-activity-focussed design is better for making tools to help people achieve their desired outcomes, but in MVP-driven product teams accessibility and inclusion can be seen as an irritating after-thought. it works fine for me, can't we just ship it?
+`npm run develop` or `npm start`
+Proxy for `gatsby develop`, builds and serves with some fancy stuff on http://localhost:8000/
 
-product management used to be a function of marketing. it's easy to rationalise that we design products for the most valuable target users. this approach has led to significant harm at scale, e.g. twitter taking over a year to give any mechanism for reporting or blocking abusive content, a problem none of the makers had ever experienced personally.
+`npm run clean`
+Sometimes it gets all gunked up and this (generally) makes it nice again.
 
-great design, like the oxo good grips potato peeler, is often a result of designing for edge-cases and trusting the middle will sort itself out. (in that case, putting a normal potato peeler in a mountain bike grip so a partner with arthritis could use it more comfortably)
+## Accessibility standards
 
----
+It's intended to reach the WCAG 2.2 AAA standard. If you spot anything falling short, please report and/or submit a fix.
 
-### Reading
-- https://www.extentia.com/post/designing-for-inclusivity-and-diversity
-- https://link.springer.com/chapter/10.1007/978-3-030-49282-3_4
-- https://insights.simpsonscarborough.com/the-trouble-with-personas
-- https://www.linkedin.com/pulse/how-can-we-mobilise-underrepresented-groups-ensure-theyre-shubib/
-- https://xd.adobe.com/ideas/principles/design-systems/what-is-inclusive-design-principles-and-examples/
+## Known shonk
+
+The big one is scenarios. They're an array of strings, permalinked by index position as a URL parameter. This means:
+
+1. Deleting a scenario would break every subsequently indexed permalink
+1. Scenarios can only be plain text with no formatting
+1. There are no test and a really long scenario on a really small screen might break the layout
+
+If you feel like addressing any of these, please go for it.

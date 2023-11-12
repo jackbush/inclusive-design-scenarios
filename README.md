@@ -1,4 +1,4 @@
-# About this tool
+# About
 
 A tool for stress-testing inclusivity of designs against commonly overlooked scenarios. [Read more about it here](https://www.theuxtoolbox.com/inclusive-design-scenarios/about/).
 

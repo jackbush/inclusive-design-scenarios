@@ -14,12 +14,12 @@ Trying to make creative use of the [Issues Tracker](https://github.com/theuxtool
 
 Anybody is welcome to [submit a pull request (PR)](https://github.com/theuxtoolbox/inclusive-design-scenarios/pulls). Just ask that any PR references an issue and includes a clear description of what it is.
 
-# Accessibility standards
+# Accessibility
 
 It's intended to reach the WCAG 2.2 AAA standard. If you spot anything falling short, please report and/or submit a fix.
 
 # Running locally
 
-It's a simple [Gatsby Quick Start app](https://www.gatsbyjs.com/docs/quick-start/), uses the [Gatsby CLI tools](https://www.gatsbyjs.com/docs/reference/gatsby-cli).
+It's a simple [Gatsby Quick Start](https://www.gatsbyjs.com/docs/quick-start/) app, with proxies for the main [Gatsby CLI tools](https://www.gatsbyjs.com/docs/reference/gatsby-cli) included in `package.json`.
 
-`npm start` is a proxy for `npm run develop`, builds and serves with some fancy stuff.
+`npm start` cleans, builds and serves with all mod cons.

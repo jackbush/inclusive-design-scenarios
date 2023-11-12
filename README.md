@@ -4,7 +4,7 @@
 
 # Contributing
 
-We want this to be as easy as possible, with everybody welcome to get involved. This is the sort of project which will especially benefit from a breadth of lived experience.
+This is the sort of project which will especially benefit from a breadth of lived experience. Want this to be as easy as possible, with everybody welcome to get involved.
 
 ### Non-technical contributions
 
@@ -16,10 +16,10 @@ Anybody is welcome to [submit a pull request (PR)](https://github.com/theuxtoolb
 
 # Accessibility
 
-It's intended to reach the WCAG 2.2 AAA standard. If you spot anything falling short, please report and/or submit a fix.
+It's intended to reach the [WCAG 2.2 AAA standard](https://www.w3.org/TR/WCAG22/). If you spot anything falling short, please report and/or submit a fix.
 
 # Running locally
 
-It's a simple [Gatsby Quick Start](https://www.gatsbyjs.com/docs/quick-start/) app, with proxies for the main [Gatsby CLI tools](https://www.gatsbyjs.com/docs/reference/gatsby-cli) included in `package.json`.
+It's a simple [Gatsby Quick Start](https://www.gatsbyjs.com/docs/quick-start/) app, with proxies for the main [Gatsby CLI tools](https://www.gatsbyjs.com/docs/reference/gatsby-cli) included in `package.json`. There's no database or CMS.
 
 `npm start` cleans, builds and serves with all mod cons.

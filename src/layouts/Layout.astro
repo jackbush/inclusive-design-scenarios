@@ -1,0 +1,45 @@
+---
+import '../styles/global.scss';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'A tool for stress-testing inclusivity of designs against commonly overlooked scenarios.',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const pageTitle = title === 'Inclusive Design Scenarios'
+  ? title
+  : `${title} — Inclusive Design Scenarios`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <nav class="nav" aria-label="Site navigation">
+      <a href={base} class="nav__brand">Inclusive Design Scenarios</a>
+      <a href={`${base}about`} class="nav__link">About</a>
+    </nav>
+    <div class="container" id="main-content" tabindex="-1">
+      <slot />
+    </div>
+  </body>
+</html>

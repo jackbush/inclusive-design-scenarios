@@ -1,34 +1,19 @@
 {
   "name": "inclusive-design-scenarios",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "inclusive-design-scenarios",
+  "description": "A tool for stress-testing inclusivity of designs against commonly overlooked scenarios.",
   "author": "Jack Bush",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
-    "develop": "gatsby clean && gatsby develop",
-    "start": "npm run develop",
-    "build": "gatsby clean && gatsby build",
-    "serve": "gatsby clean && gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@mdx-js/react": "^2.3.0",
-    "gatsby": "^5.7.0",
-    "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-image": "^3.7.0",
-    "gatsby-plugin-sass": "^3.2.0",
-    "gatsby-source-filesystem": "^5.7.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "react-use-query-param-string": "^2.0.10",
-    "sass": "^1.59.2"
+    "astro": "^5.0.0"
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "sass": "^1.70.0"
   }
 }

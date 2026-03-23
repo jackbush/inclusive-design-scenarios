@@ -20,6 +20,12 @@ It's intended to reach the [WCAG 2.2 AAA standard](https://www.w3.org/TR/WCAG22/
 
 # Running locally
 
-It's a simple [Gatsby Quick Start](https://www.gatsbyjs.com/docs/quick-start/) app, with proxies for the main [Gatsby CLI tools](https://www.gatsbyjs.com/docs/reference/gatsby-cli) included in `package.json`. There's no database or CMS.
+Built with [Astro](https://astro.build/). No database or CMS — scenarios are Markdown files in `src/content/scenarios/`.
 
-`npm start` cleans, builds and serves with all mod cons.
+```
+npm start     # dev server with hot reload
+npm run build # production build → dist/
+npm run deploy # build and publish to GitHub Pages
+```
+
+To add a scenario, create a new `.md` file in `src/content/scenarios/` with a descriptive filename (used as the URL slug) and a `title` in the frontmatter.

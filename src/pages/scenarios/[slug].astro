@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const scenarios = await getCollection('scenarios');
+  return scenarios.map((scenario) => ({
+    params: { slug: scenario.slug },
+    props: { scenario },
+  }));
+}
+
+const { scenario } = Astro.props;
+const { Content } = await scenario.render();
+
+const allScenarios = await getCollection('scenarios');
+const slugs = allScenarios.map((s) => s.slug);
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<Layout title={scenario.data.title}>
+  <main>
+    <header class="header">
+      <h1 class="header__title">Inclusive Design Scenarios</h1>
+      <p class="header__lead">
+        A tool for stress-testing inclusivity of designs against commonly overlooked scenarios.
+      </p>
+    </header>
+
+    <article aria-label={scenario.data.title}>
+      <Content />
+    </article>
+  </main>
+
+  <div class="cta__wrapper">
+    <button class="cta" id="random-btn" type="button" aria-label="Show a different scenario">
+      Give me another one
+    </button>
+  </div>
+</Layout>
+
+<script define:vars={{ slugs, base, currentSlug: scenario.slug }}>
+  document.getElementById('random-btn').addEventListener('click', () => {
+    const others = slugs.filter((s) => s !== currentSlug);
+    const next = others[Math.floor(Math.random() * others.length)];
+    window.location.href = base + 'scenarios/' + next;
+  });
+</script>
+
+<style lang="scss">
+  .scenario__content {
+    font-size: clamp(22px, 3.5vw, 32px);
+    line-height: 1.55;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  article :global(p) {
+    font-size: clamp(22px, 3.5vw, 32px);
+    line-height: 1.55;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+</style>

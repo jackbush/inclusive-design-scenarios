@@ -1,0 +1,275 @@
+@use './normalize';
+
+// --- Tokens ---
+$bg:          #FAFAFA;
+$fg:          #0A0A0A;
+$pink:        #fcb0c0;
+$muted:       #545454; // 7.35:1 on $bg — meets AAA
+
+$font:        'Space Grotesk', sans-serif;
+$transition:  200ms ease;
+$container:   680px;
+$gutter:      clamp(20px, 5vw, 40px);
+$nav-height:  52px;
+
+// --- Base ---
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: $bg;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  background: $bg;
+  color: $fg;
+  font-family: $font;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// --- Skip link ---
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: $gutter;
+  z-index: 200;
+  padding: 10px 16px;
+  background: $fg;
+  color: $bg;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// --- Nav ---
+.nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: calc(100% - 2 * #{$gutter});
+  max-width: $container;
+  height: $nav-height;
+  background: $bg;
+  border-bottom: 2px solid $fg;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__brand {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $fg;
+  text-decoration: none;
+  line-height: 1;
+  // stretch touch target to full nav height
+  display: flex;
+  align-items: center;
+  height: $nav-height;
+
+  @media (hover: hover) {
+    &:hover { opacity: 0.6; }
+  }
+
+  &:focus-visible {
+    outline: 3px solid $fg;
+    outline-offset: 3px;
+  }
+}
+
+.nav__link {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: $fg;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color $transition;
+  // stretch touch target to full nav height
+  display: flex;
+  align-items: center;
+  height: $nav-height;
+
+  @media (hover: hover) {
+    &:hover { border-color: $fg; }
+  }
+
+  &:focus-visible {
+    outline: 3px solid $fg;
+    outline-offset: 3px;
+  }
+}
+
+// --- Container ---
+.container {
+  width: calc(100% - 2 * #{$gutter});
+  max-width: $container;
+  margin: 0 auto;
+  padding-top: $nav-height;
+}
+
+// --- Page header ---
+.header {
+  padding-top: clamp(36px, 6vw, 64px);
+  padding-bottom: 24px;
+  border-bottom: 2px solid $fg;
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.header__title {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.header__lead {
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.45;
+  color: $muted;
+}
+
+// --- Main ---
+main {
+  padding-bottom: 120px;
+}
+
+// --- Scenario page ---
+.scenario__content {
+  font-size: clamp(22px, 3.5vw, 32px);
+  line-height: 1.55;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+// --- CTA ---
+.cta__wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 $gutter 24px;
+  display: flex;
+  justify-content: center;
+
+  // Fade out content above button
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: linear-gradient(to bottom, transparent, $bg);
+    pointer-events: none;
+  }
+
+  // Solid cover below button
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background: $bg;
+    pointer-events: none;
+  }
+}
+
+.cta {
+  width: 100%;
+  max-width: $container;
+  padding: 16px 24px;
+  font-family: $font;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  border: 2px solid $fg;
+  background: $fg;
+  color: $bg;
+  transition: background $transition, border-color $transition, color $transition;
+
+  @media (hover: hover) {
+    &:hover {
+      background: $bg;
+      color: $fg;
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid $fg;
+    outline-offset: 3px;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// --- About / prose content ---
+.content {
+  p, li {
+    line-height: 1.65;
+    font-size: clamp(16px, 2vw, 18px);
+  }
+
+  h2 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 40px 0 12px;
+    color: $muted;
+  }
+
+  ul {
+    padding-left: 1.2em;
+  }
+
+  a {
+    color: $fg;
+    text-decoration: underline;
+    text-decoration-color: $pink;
+    text-underline-offset: 3px;
+    transition: text-decoration-color $transition;
+
+    @media (hover: hover) {
+      &:hover { text-decoration-color: $fg; }
+    }
+
+    &:focus-visible {
+      outline: 3px solid $fg;
+      outline-offset: 2px;
+    }
+  }
+
+  cite { font-style: italic; }
+}
+
+// --- Reduced motion ---
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -2,4 +2,4 @@
 title: Stroke recovery
 ---
 
-W had a stroke in his early forties. Now he's re-learning everything from using his primary arm to reading again.
+I had a stroke in my early forties. Now I'm re-learning everything from using my primary arm to reading again.

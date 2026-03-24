@@ -2,4 +2,4 @@
 title: Language barriers
 ---
 
-H is a fluent English speaker but hasn't been in America long. She's frequently tripped up by American cultural idioms and phrases. She needs websites to be simple and readable, even when the concept is complex.
+I'm a fluent English speaker but haven't been in America long. I'm frequently tripped up by American cultural idioms and phrases. I need websites to be simple and readable, even when the concept is complex.

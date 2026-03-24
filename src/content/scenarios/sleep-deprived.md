@@ -2,4 +2,4 @@
 title: Sleep deprived
 ---
 
-V is sleep-deprived. She gets about five hours of bad sleep a night, has high blood pressure, and her doctor wants to test her for sleep apnea. She doesn't want to go to the test because they might "put her on a machine" so instead she muddles through her workday thinking poorly and having trouble concentrating on her work.
+I'm sleep-deprived. I get about five hours of bad sleep a night, have high blood pressure, and my doctor wants to test me for sleep apnea. I don't want to go to the test because they might "put me on a machine" so instead I muddle through my workday thinking poorly and having trouble concentrating on my work.

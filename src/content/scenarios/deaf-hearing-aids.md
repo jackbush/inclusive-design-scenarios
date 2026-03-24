@@ -2,4 +2,4 @@
 title: Deaf with hearing aids
 ---
 
-N has poor hearing in both ears, and hearing aids. Functionally, she's deaf. When she's home by herself she sometimes turns the sound all the way up on her computer speakers so she can hear videos and audio recordings on the web, but most of the time she just skips them.
+I have poor hearing in both ears, and hearing aids. Functionally, I'm deaf. When I'm home by myself I sometimes turn the sound all the way up on my computer speakers so I can hear videos and audio recordings on the web, but most of the time I just skip them.

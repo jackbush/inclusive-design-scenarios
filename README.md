@@ -18,6 +18,22 @@ Anybody is welcome to [submit a pull request (PR)](https://github.com/jackbush/i
 
 It's intended to reach the [WCAG 2.2 AAA standard](https://www.w3.org/TR/WCAG22/). If you spot anything falling short, please report and/or submit a fix.
 
+# Writing scenarios
+
+Scenarios are written in first person.
+
+**Human, not clinical.** Use common names for conditions (chemo brain, lazy eye, gamer's thumb). When a clinical term is necessary, explain it immediately after — "It's called chemo brain" — rather than assuming familiarity.
+
+**Situation first, consequence second.** Each scenario has two parts: what is happening to this person, and how it affects their use of the web or technology. The consequence doesn't have to be stated explicitly — a behavioural detail can carry it — but the cause-and-effect chain should always be present.
+
+**No generalisations.** Concrete detail is what makes a scenario stick. Not "a person with motor difficulties" but the exact situation: fell running to close car windows in the rain, served on a lightship in the North Atlantic, has a grabby child in one arm. These details aren't decorative — they produce the immediacy that makes the reader feel the friction.
+
+**No pity or inspiration.** State conditions matter-of-factly. Describe coping strategies with the same neutrality as the conditions themselves. Avoid the tragedy narrative and the inspiration narrative equally.
+
+**No longer than necessary.** We want these to be memorable, so length should follow complexity. A one-sentence scenario is fine if it says everything. Three sentences are fine if there are multiple distinct implications to convey.
+
+**What to avoid.** Don't moralize or state the design lesson explicitly — imply it. Don't use euphemisms or describe the person purely by their condition; most scenarios establish profession, history, or personality alongside it. Don't overclaim emotional states unless they're a specific, functional consequence of the condition.
+
 # Running locally
 
 Built with [Astro](https://astro.build/). No database or CMS — scenarios are Markdown files in `src/content/scenarios/`.

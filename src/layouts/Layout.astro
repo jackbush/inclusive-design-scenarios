@@ -1,65 +1,78 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
-  title: string;
-  description?: string;
+    title: string;
+    description?: string;
 }
 
 const {
-  title,
-  description = 'A tool for stress-testing inclusivity of designs against commonly overlooked scenarios.',
+    title,
+    description = "A tool for stress-testing inclusivity of designs against commonly overlooked scenarios.",
 } = Astro.props;
 
-const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
-const pageTitle = title === 'Inclusive Design Scenarios'
-  ? title
-  : `${title} — Inclusive Design Scenarios`;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+const pathname = Astro.url.pathname.replace(/\/?$/, "/");
+const pageTitle =
+    title === "Inclusive Design Scenarios"
+        ? title
+        : `${title} — Inclusive Design Scenarios`;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light dark" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={description} />
-    <link rel="icon" href="data:," />
-    {/* Blocking script: hide until color scheme is confirmed, fall back after 200ms */}
-    <script is:inline>
-      (function () {
-        var d = document.documentElement;
-        d.style.visibility = 'hidden';
-        var done = function () { d.style.visibility = ''; };
-        // matchMedia is synchronous — resolve immediately if available
-        if (window.matchMedia) {
-          done();
-        } else {
-          // Rare fallback: reveal after a short timeout
-          var t = setTimeout(done, 200);
-          window.addEventListener('DOMContentLoaded', function () {
-            clearTimeout(t);
-            done();
-          }, { once: true });
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="light dark" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={description} />
+        <link rel="icon" href="data:," />
+        {
+            /* Blocking script: hide until color scheme is confirmed, fall back after 200ms */
         }
-      })();
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
-    <nav class="nav" aria-label="Site navigation">
-      <a href={base} class="nav__brand">Inclusive Design Scenarios</a>
-      <a href={`${base}about`} class="nav__link">About</a>
-    </nav>
-    <div class="container" id="main-content" tabindex="-1">
-      <slot />
-    </div>
-  </body>
+        <script is:inline>
+            (function () {
+                var d = document.documentElement;
+                d.style.visibility = "hidden";
+                var done = function () {
+                    d.style.visibility = "";
+                };
+                // matchMedia is synchronous — resolve immediately if available
+                if (window.matchMedia) {
+                    done();
+                } else {
+                    // Rare fallback: reveal after a short timeout
+                    var t = setTimeout(done, 200);
+                    window.addEventListener(
+                        "DOMContentLoaded",
+                        function () {
+                            clearTimeout(t);
+                            done();
+                        },
+                        { once: true },
+                    );
+                }
+            })();
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to content</a>
+        <nav class="nav" aria-label="Site navigation">
+            <a href={base} class="nav__brand">Inclusive Design Scenarios</a>
+            <div class="nav__group">
+                <a href={`${base}all`} class={`nav__link${pathname === `${base}all/` ? " nav__link--active" : ""}`} aria-current={pathname === `${base}all/` ? "page" : undefined}>All scenarios</a>
+                <a href={`${base}about`} class={`nav__link${pathname === `${base}about/` ? " nav__link--active" : ""}`} aria-current={pathname === `${base}about/` ? "page" : undefined}>About</a>
+            </div>
+        </nav>
+        <div class="container" id="main-content" tabindex="-1">
+            <slot />
+        </div>
+    </body>
 </html>

@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const scenarios = await getCollection('scenarios');
+const sorted = scenarios.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+
+const rendered = await Promise.all(
+  sorted.map(async (s) => {
+    const { Content } = await s.render();
+    return { scenario: s, Content };
+  })
+);
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<Layout
+  title="All scenarios"
+  description="Every scenario in the collection, listed alphabetically."
+>
+  <main>
+    <header class="header">
+      <h1 class="header__title">All scenarios</h1>
+      <p class="header__lead">Every scenario in the collection, listed alphabetically.</p>
+    </header>
+
+    <div class="content">
+      {rendered.map(({ scenario, Content }, i) => (
+        <>
+          {i > 0 && <hr />}
+          <h2>
+            <a href={`${base}scenarios/${scenario.slug}`}>
+              {scenario.data.title}
+            </a>
+          </h2>
+          <Content />
+        </>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  hr {
+    border: none;
+    border-top: 2px solid var(--muted);
+    margin: 2rem 0;
+  }
+</style>

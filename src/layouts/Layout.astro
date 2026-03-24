@@ -22,9 +22,29 @@ const pageTitle = title === 'Inclusive Design Scenarios'
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="icon" href="data:," />
+    {/* Blocking script: hide until color scheme is confirmed, fall back after 200ms */}
+    <script is:inline>
+      (function () {
+        var d = document.documentElement;
+        d.style.visibility = 'hidden';
+        var done = function () { d.style.visibility = ''; };
+        // matchMedia is synchronous — resolve immediately if available
+        if (window.matchMedia) {
+          done();
+        } else {
+          // Rare fallback: reveal after a short timeout
+          var t = setTimeout(done, 200);
+          window.addEventListener('DOMContentLoaded', function () {
+            clearTimeout(t);
+            done();
+          }, { once: true });
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

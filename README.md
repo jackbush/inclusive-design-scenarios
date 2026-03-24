@@ -25,7 +25,7 @@ Only submit a scenario if it comes from real experience — your own, someone yo
 - **No longer than necessary.** We want these to be memorable, so length should follow complexity. A one-sentence scenario is fine if it says everything. Three sentences are fine if there are multiple distinct implications to convey.
 - **What to avoid.** Don't moralize or state the design lesson explicitly — imply it. Don't use euphemisms or describe the person purely by their condition; most scenarios establish profession, history, or personality alongside it. Don't overclaim emotional states unless they're a specific, functional consequence of the condition.
 
-To add a scenario, create a new `.md` file in `src/content/scenarios/` with a descriptive filename (used as the URL slug) and a `title` in the frontmatter.
+To add a scenario, create a new `.md` file in `src/content/scenarios/` with a descriptive filename (used as the URL slug) and a `title` in the frontmatter. If this seems confusing, log it as an issue (see above) and we'll add it for you.
 
 ## Running locally
 

@@ -1,14 +1,17 @@
-@use './normalize';
-
-// --- Design tokens (light mode defaults) ---
-// Light:  bg #FAFAFA, fg #0A0A0A, muted #545454 → 7.35:1 AAA ✓
-// Dark:   bg #111111, fg #F0F0F0 → 17:1 AAA ✓
-//         muted #A3A3A3 on #111111 → 7.56:1 AAA ✓
+/* --- Design tokens --- */
+/* Light:  bg #FAFAFA, fg #0A0A0A, muted #545454 → 7.35:1 AAA ✓ */
+/* Dark:   bg #111111, fg #F0F0F0 → 17:1 AAA ✓                  */
+/*         muted #A3A3A3 on #111111 → 7.56:1 AAA ✓              */
 :root {
-  --bg:    #FAFAFA;
-  --fg:    #0A0A0A;
-  --muted: #545454;
-  --pink:  #fcb0c0;
+  --bg:         #FAFAFA;
+  --fg:         #0A0A0A;
+  --muted:      #545454;
+  --pink:       #fcb0c0;
+  --font:       'Space Grotesk', sans-serif;
+  --transition: 200ms ease;
+  --container:  680px;
+  --gutter:     clamp(20px, 5vw, 40px);
+  --nav-height: 52px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,18 +23,13 @@
   }
 }
 
-$font:        'Space Grotesk', sans-serif;
-$transition:  200ms ease;
-$container:   680px;
-$gutter:      clamp(20px, 5vw, 40px);
-$nav-height:  52px;
-
-// --- Base ---
+/* --- Base --- */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
   color-scheme: light dark;
   background: var(--bg);
+  -webkit-text-size-adjust: 100%; /* prevent iOS font size inflation */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -42,17 +40,17 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: $font;
+  font-family: var(--font);
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// --- Skip link ---
+/* --- Skip link --- */
 .skip-link {
   position: absolute;
   top: -100%;
-  left: $gutter;
+  left: var(--gutter);
   z-index: 200;
   padding: 10px 16px;
   background: var(--fg);
@@ -66,19 +64,18 @@ body {
   }
 }
 
-// --- Nav ---
+/* --- Nav --- */
 .nav {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-  width: calc(100% - 2 * #{$gutter});
-  max-width: $container;
-  height: $nav-height;
+  width: calc(100% - 2 * var(--gutter));
+  max-width: var(--container);
+  height: var(--nav-height);
   background: var(--bg);
   border-bottom: 2px solid var(--fg);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,10 +89,9 @@ body {
   color: var(--fg);
   text-decoration: none;
   line-height: 1;
-  // stretch touch target to full nav height
   display: flex;
   align-items: center;
-  height: $nav-height;
+  height: var(--nav-height);
 
   @media (hover: hover) {
     &:hover { opacity: 0.6; }
@@ -114,11 +110,10 @@ body {
   text-decoration: none;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
-  transition: border-color $transition;
-  // stretch touch target to full nav height
+  transition: border-color var(--transition);
   display: flex;
   align-items: center;
-  height: $nav-height;
+  height: var(--nav-height);
 
   @media (hover: hover) {
     &:hover { border-color: var(--fg); }
@@ -130,15 +125,15 @@ body {
   }
 }
 
-// --- Container ---
+/* --- Container --- */
 .container {
-  width: calc(100% - 2 * #{$gutter});
-  max-width: $container;
+  width: calc(100% - 2 * var(--gutter));
+  max-width: var(--container);
   margin: 0 auto;
-  padding-top: $nav-height;
+  padding-top: var(--nav-height);
 }
 
-// --- Page header ---
+/* --- Page header --- */
 .header {
   padding-top: clamp(36px, 6vw, 64px);
   padding-bottom: 24px;
@@ -162,31 +157,22 @@ body {
   color: var(--muted);
 }
 
-// --- Main ---
+/* --- Main --- */
 main {
   padding-bottom: 120px;
 }
 
-// --- Scenario page ---
-.scenario__content {
-  font-size: clamp(22px, 3.5vw, 32px);
-  line-height: 1.55;
-  font-weight: 400;
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-
-// --- CTA ---
+/* --- CTA --- */
 .cta__wrapper {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0 $gutter 24px;
+  padding: 0 var(--gutter) 24px;
   display: flex;
   justify-content: center;
 
-  // Fade out content above button
+  /* Fade out content above button */
   &::before {
     content: '';
     position: absolute;
@@ -198,7 +184,7 @@ main {
     pointer-events: none;
   }
 
-  // Solid cover below button
+  /* Solid cover below button */
   &::after {
     content: '';
     position: absolute;
@@ -213,9 +199,9 @@ main {
 
 .cta {
   width: 100%;
-  max-width: $container;
+  max-width: var(--container);
   padding: 16px 24px;
-  font-family: $font;
+  font-family: var(--font);
   font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
@@ -224,7 +210,7 @@ main {
   border: 2px solid var(--fg);
   background: var(--fg);
   color: var(--bg);
-  transition: background $transition, border-color $transition, color $transition;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
 
   @media (hover: hover) {
     &:hover {
@@ -241,14 +227,15 @@ main {
   }
 }
 
-// --- About / prose content ---
+/* --- About / prose content --- */
 .content {
-  p, li {
+  & p,
+  & li {
     line-height: 1.65;
     font-size: clamp(16px, 2vw, 18px);
   }
 
-  h2 {
+  & h2 {
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
@@ -257,16 +244,16 @@ main {
     color: var(--muted);
   }
 
-  ul {
+  & ul {
     padding-left: 1.2em;
   }
 
-  a {
+  & a {
     color: var(--fg);
     text-decoration: underline;
     text-decoration-color: var(--pink);
     text-underline-offset: 3px;
-    transition: text-decoration-color $transition;
+    transition: text-decoration-color var(--transition);
 
     @media (hover: hover) {
       &:hover { text-decoration-color: var(--fg); }
@@ -278,10 +265,10 @@ main {
     }
   }
 
-  cite { font-style: italic; }
+  & cite { font-style: italic; }
 }
 
-// --- Reduced motion ---
+/* --- Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     transition-duration: 0.01ms !important;

@@ -20,6 +20,8 @@ It's intended to reach the [WCAG 2.2 AAA standard](https://www.w3.org/TR/WCAG22/
 
 # Writing scenarios
 
+Only submit a scenario if it comes from real experience — your own, someone you know, or observations from user research or testing sessions you've run. Don't fabricate. The value of this collection is that it reflects things designers would otherwise miss; invented scenarios defeat that purpose.
+
 Scenarios are written in first person.
 
 **Human, not clinical.** Use common names for conditions (chemo brain, lazy eye, gamer's thumb). When a clinical term is necessary, explain it immediately after — "It's called chemo brain" — rather than assuming familiarity.

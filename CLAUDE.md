@@ -42,3 +42,13 @@ No test or lint commands exist in this project.
 - **Internal links**: prefix with `import.meta.env.BASE_URL` (available in `.astro` frontmatter) or pass as `define:vars` to client scripts.
 - **Scenario text styling**: the `<article>` on the scenario page uses `:global(p)` to style the rendered Markdown paragraph at display size.
 - **No letter/index references** — the collection was originally A–Z but is now open-ended. Slugs are the only identifiers.
+
+## Writing scenarios
+
+Follow the style guide in the `# Writing scenarios` section of README.md. Additionally:
+
+**Research first.** Always search for first-person accounts online before drafting. Base each scenario in described lived experience — don't write from assumption. Useful sources include Reddit (r/disability, r/autism, r/ChronicPain, etc.), condition-specific forums, and first-person blogs.
+
+**When research is thin.** If strong first-person accounts can't be found, flag this before drafting rather than falling back on assumption.
+
+**Grounding vs. fabrication.** Use research to establish the condition and its real effects. You can invent the person — their job, backstory, situation — but don't invent the experience itself. Derive the condition's impact from what people actually describe.

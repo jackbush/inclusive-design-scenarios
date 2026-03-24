@@ -67,8 +67,20 @@ const pageTitle =
         <nav class="nav" aria-label="Site navigation">
             <a href={base} class="nav__brand">Inclusive Design Scenarios</a>
             <div class="nav__group">
-                <a href={`${base}all`} class={`nav__link${pathname === `${base}all/` ? " nav__link--active" : ""}`} aria-current={pathname === `${base}all/` ? "page" : undefined}>All scenarios</a>
-                <a href={`${base}about`} class={`nav__link${pathname === `${base}about/` ? " nav__link--active" : ""}`} aria-current={pathname === `${base}about/` ? "page" : undefined}>About</a>
+                <a
+                    href={`${base}all`}
+                    class={`nav__link${pathname === `${base}all/` ? " nav__link--active" : ""}`}
+                    aria-current={pathname === `${base}all/`
+                        ? "page"
+                        : undefined}>List</a
+                >
+                <a
+                    href={`${base}about`}
+                    class={`nav__link${pathname === `${base}about/` ? " nav__link--active" : ""}`}
+                    aria-current={pathname === `${base}about/`
+                        ? "page"
+                        : undefined}>About</a
+                >
             </div>
         </nav>
         <div class="container" id="main-content" tabindex="-1">

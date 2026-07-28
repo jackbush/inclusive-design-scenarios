@@ -1,4 +1,4 @@
-A tool for stress-testing inclusivity of designs against commonly overlooked scenarios. [Read more about it here](https://www.jackbush.github.io/inclusive-design-scenarios/about/).
+Each card describes a real person's experience and needs. They're uncommon enough to be missed in most user testing cohorts, but need to be designed for. [Read more about it here](https://www.jackbush.github.io/inclusive-design-scenarios/about/).
 
 It's intended to reach the [WCAG 2.2 AAA standard](https://www.w3.org/TR/WCAG22/). If you spot anything falling short, please report and/or submit a fix.
 
